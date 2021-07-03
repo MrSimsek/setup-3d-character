@@ -45,9 +45,9 @@ public class CameraRig : MonoBehaviour
         currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(_pitch, _yaw), ref rotationSmoothVelocity, rotationSmoothTime);
         transform.eulerAngles = currentRotation;
 
-        // Bu satırla kamera döndüğü yönde karakteri tersi yönde bırakıyor (eğlenceli)
-        transform.position = _target.position + _offset - transform.forward * _distanceFromTarget;
+        // This line makes a fun camera movement
+        // transform.position = _target.position + _offset - transform.forward * _distanceFromTarget;
 
-        // transform.position = _target.position - transform.forward * _distanceFromTarget;
+        transform.position = _target.position - transform.forward * _distanceFromTarget;
     }
 }
